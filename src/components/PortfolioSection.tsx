@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import portfolioAdvert from "@/assets/portfolio-advert.png";
 
 type Category = "all" | "web" | "graphic";
 
