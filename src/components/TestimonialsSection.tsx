@@ -5,7 +5,7 @@ const testimonials = [
   {
     name: "Dr. Sarah Mitchell",
     role: "Senior Lecturer, Digital Media",
-    text: "Nelly consistently delivers work that exceeds expectations. Her ability to combine aesthetic sensibility with technical proficiency is remarkable.",
+    text: "LucyNoela consistently delivers work that exceeds expectations. Her ability to combine aesthetic sensibility with technical proficiency is remarkable.",
   },
   {
     name: "James Okonkwo",
