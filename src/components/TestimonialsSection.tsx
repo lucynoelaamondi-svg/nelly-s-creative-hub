@@ -22,14 +22,12 @@ const testimonials = [
 const TestimonialsSection = () => (
   <section className="section-padding bg-secondary/30">
     <div className="section-container">
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="font-display text-3xl md:text-4xl font-bold text-center mb-14"
-      >
-        What People <span className="gradient-text">Say</span>
-      </motion.h2>
+      <div className="text-center mb-14">
+        <span className="section-label justify-center">Testimonials</span>
+        <h2 className="section-title">
+          What People <span className="gradient-text">Say</span>
+        </h2>
+      </div>
 
       <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {testimonials.map((t, i) => (
@@ -39,14 +37,16 @@ const TestimonialsSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.15 }}
-            className="card-elevated p-6 relative"
+            className="card-elevated p-7 relative"
           >
-            <Quote size={28} className="text-primary/20 mb-3" />
-            <p className="text-muted-foreground text-sm leading-relaxed mb-5 italic">
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ backgroundImage: "var(--hero-gradient)" }}>
+              <Quote size={18} className="text-primary-foreground" />
+            </div>
+            <p className="text-muted-foreground text-sm leading-relaxed mb-6">
               "{t.text}"
             </p>
-            <div>
-              <p className="font-display font-semibold text-sm">{t.name}</p>
+            <div className="border-t border-border pt-4">
+              <p className="font-display font-bold text-sm">{t.name}</p>
               <p className="text-muted-foreground text-xs">{t.role}</p>
             </div>
           </motion.div>

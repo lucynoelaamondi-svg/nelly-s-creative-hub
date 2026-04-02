@@ -28,10 +28,10 @@ const SkillBar = ({ skill, delay }: { skill: Skill; delay: number }) => (
     className="space-y-2"
   >
     <div className="flex justify-between text-sm">
-      <span className="font-medium">{skill.name}</span>
-      <span className="text-muted-foreground">{skill.level}%</span>
+      <span className="font-display font-semibold">{skill.name}</span>
+      <span className="text-primary font-bold">{skill.level}%</span>
     </div>
-    <div className="h-2 rounded-full bg-secondary overflow-hidden">
+    <div className="h-2.5 rounded-full bg-secondary overflow-hidden">
       <motion.div
         initial={{ width: 0 }}
         whileInView={{ width: `${skill.level}%` }}
@@ -47,19 +47,17 @@ const SkillBar = ({ skill, delay }: { skill: Skill; delay: number }) => (
 const SkillsSection = () => (
   <section id="skills" className="section-padding">
     <div className="section-container">
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="font-display text-3xl md:text-4xl font-bold text-center mb-14"
-      >
-        My <span className="gradient-text">Skills</span>
-      </motion.h2>
+      <div className="text-center mb-14">
+        <span className="section-label justify-center">What I Know</span>
+        <h2 className="section-title">
+          My <span className="gradient-text">Skills</span>
+        </h2>
+      </div>
 
       <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-        <div>
-          <h3 className="font-display font-semibold text-xl mb-6 flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-primary" />
+        <div className="card-elevated p-8">
+          <h3 className="font-display font-bold text-xl mb-6 flex items-center gap-3">
+            <span className="w-3 h-3 rounded-full" style={{ backgroundImage: "var(--hero-gradient)" }} />
             Web Development
           </h3>
           <div className="space-y-5">
@@ -68,9 +66,9 @@ const SkillsSection = () => (
             ))}
           </div>
         </div>
-        <div>
-          <h3 className="font-display font-semibold text-xl mb-6 flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-primary" />
+        <div className="card-elevated p-8">
+          <h3 className="font-display font-bold text-xl mb-6 flex items-center gap-3">
+            <span className="w-3 h-3 rounded-full" style={{ backgroundImage: "var(--hero-gradient)" }} />
             Graphic Design
           </h3>
           <div className="space-y-5">

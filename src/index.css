@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,33 +6,33 @@
 
 @layer base {
   :root {
-    --background: 30 20% 98%;
-    --foreground: 20 10% 10%;
+    --background: 40 25% 97%;
+    --foreground: 240 20% 8%;
 
-    --card: 30 15% 96%;
-    --card-foreground: 20 10% 10%;
+    --card: 40 20% 95%;
+    --card-foreground: 240 20% 8%;
 
-    --popover: 30 20% 98%;
-    --popover-foreground: 20 10% 10%;
+    --popover: 40 25% 97%;
+    --popover-foreground: 240 20% 8%;
 
-    --primary: 24 95% 53%;
+    --primary: 340 82% 52%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 30 10% 92%;
-    --secondary-foreground: 20 10% 15%;
+    --secondary: 40 15% 90%;
+    --secondary-foreground: 240 20% 12%;
 
-    --muted: 30 10% 94%;
-    --muted-foreground: 20 5% 45%;
+    --muted: 40 12% 92%;
+    --muted-foreground: 240 8% 42%;
 
-    --accent: 24 95% 53%;
+    --accent: 26 95% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 30 10% 88%;
-    --input: 30 10% 88%;
-    --ring: 24 95% 53%;
+    --border: 40 12% 87%;
+    --input: 40 12% 87%;
+    --ring: 340 82% 52%;
 
     --radius: 0.75rem;
 
@@ -46,43 +46,44 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
 
     /* Custom tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(24 95% 53%), hsl(35 95% 55%));
-    --card-shadow: 0 4px 24px -4px hsl(20 10% 10% / 0.08);
-    --card-shadow-hover: 0 12px 40px -8px hsl(24 95% 53% / 0.2);
-    --nav-blur: blur(16px);
+    --hero-gradient: linear-gradient(135deg, hsl(340 82% 52%), hsl(26 95% 55%));
+    --hero-gradient-subtle: linear-gradient(135deg, hsl(340 82% 52% / 0.1), hsl(26 95% 55% / 0.1));
+    --card-shadow: 0 4px 24px -4px hsl(240 20% 8% / 0.06);
+    --card-shadow-hover: 0 16px 48px -12px hsl(340 82% 52% / 0.18);
+    --nav-blur: blur(20px);
   }
 
   .dark {
-    --background: 20 10% 8%;
-    --foreground: 30 15% 92%;
+    --background: 240 15% 6%;
+    --foreground: 40 20% 92%;
 
-    --card: 20 8% 12%;
-    --card-foreground: 30 15% 92%;
+    --card: 240 12% 10%;
+    --card-foreground: 40 20% 92%;
 
-    --popover: 20 8% 12%;
-    --popover-foreground: 30 15% 92%;
+    --popover: 240 12% 10%;
+    --popover-foreground: 40 20% 92%;
 
-    --primary: 24 95% 53%;
+    --primary: 340 82% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 20 8% 16%;
-    --secondary-foreground: 30 15% 85%;
+    --secondary: 240 10% 14%;
+    --secondary-foreground: 40 15% 85%;
 
-    --muted: 20 8% 16%;
-    --muted-foreground: 30 8% 55%;
+    --muted: 240 10% 14%;
+    --muted-foreground: 40 8% 50%;
 
-    --accent: 24 95% 53%;
+    --accent: 26 95% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 20 8% 18%;
-    --input: 20 8% 18%;
-    --ring: 24 95% 53%;
+    --border: 240 10% 16%;
+    --input: 240 10% 16%;
+    --ring: 340 82% 55%;
 
-    --card-shadow: 0 4px 24px -4px hsl(0 0% 0% / 0.3);
-    --card-shadow-hover: 0 12px 40px -8px hsl(24 95% 53% / 0.3);
+    --card-shadow: 0 4px 24px -4px hsl(0 0% 0% / 0.4);
+    --card-shadow-hover: 0 16px 48px -12px hsl(340 82% 55% / 0.25);
   }
 }
 
@@ -110,16 +111,22 @@
     background-image: var(--hero-gradient);
   }
   .card-elevated {
-    @apply bg-card rounded-xl border border-border;
+    @apply bg-card rounded-2xl border border-border;
     box-shadow: var(--card-shadow);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
   }
   .card-elevated:hover {
     box-shadow: var(--card-shadow-hover);
-    transform: translateY(-2px);
+    transform: translateY(-4px);
   }
   .nav-glass {
-    @apply bg-background/80 border-b border-border;
+    @apply bg-background/70 border-b border-border;
     backdrop-filter: var(--nav-blur);
+  }
+  .section-label {
+    @apply inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] uppercase text-primary mb-4;
+  }
+  .section-title {
+    @apply font-display text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-4;
   }
 }
