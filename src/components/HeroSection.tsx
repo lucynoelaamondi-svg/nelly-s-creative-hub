@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImg from "@/assets/hero-illustration.png";
+import heroImg from "@/assets/hero-photo.jpg";
 
 const HeroSection = () => (
   <section className="min-h-screen flex items-center relative overflow-hidden">
@@ -53,9 +53,9 @@ const HeroSection = () => (
           <img
             src={heroImg}
             alt="LucyNoela Amondi - Graphic & Web Designer"
-            width={800}
-            height={900}
-            className="relative w-72 sm:w-80 lg:w-96 h-auto object-contain"
+            width={400}
+            height={500}
+            className="relative w-72 sm:w-80 lg:w-96 h-auto object-cover rounded-2xl shadow-xl"
           />
         </div>
       </motion.div>
