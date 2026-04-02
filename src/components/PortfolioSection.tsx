@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import portfolioAdvert from "@/assets/portfolio-advert.png";
 
 type Category = "all" | "web" | "graphic";
 
@@ -62,6 +63,14 @@ const projects: Project[] = [
     description: "Cohesive visual campaign for a lifestyle brand launch.",
     tech: ["Photoshop", "Canva"],
     image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&h=400&fit=crop",
+  },
+  {
+    id: 7,
+    title: "Nelly Furnitures Advert",
+    category: "graphic",
+    description: "Eye-catching promotional advert for a furniture store featuring new arrivals.",
+    tech: ["Photoshop", "Illustrator"],
+    image: portfolioAdvert,
   },
 ];
 
