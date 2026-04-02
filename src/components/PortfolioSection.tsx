@@ -64,6 +64,14 @@ const projects: Project[] = [
     tech: ["Photoshop", "Canva"],
     image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&h=400&fit=crop",
   },
+  {
+    id: 7,
+    title: "Nelly Furnitures Advert",
+    category: "graphic",
+    description: "Eye-catching promotional advert for a furniture store featuring new arrivals.",
+    tech: ["Photoshop", "Illustrator"],
+    image: portfolioAdvert,
+  },
 ];
 
 const filters: { label: string; value: Category }[] = [
