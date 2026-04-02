@@ -75,7 +75,7 @@ const projects: Project[] = [
 ];
 
 const filters: { label: string; value: Category }[] = [
-  { label: "All", value: "all" },
+  { label: "All Projects", value: "all" },
   { label: "Web Design", value: "web" },
   { label: "Graphic Design", value: "graphic" },
 ];
@@ -87,17 +87,15 @@ const PortfolioSection = () => {
   return (
     <section id="portfolio" className="section-padding bg-secondary/30">
       <div className="section-container">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="font-display text-3xl md:text-4xl font-bold text-center mb-4"
-        >
-          My <span className="gradient-text">Portfolio</span>
-        </motion.h2>
-        <p className="text-muted-foreground text-center mb-10 max-w-md mx-auto">
-          A selection of web and graphic design projects showcasing creativity and technical expertise.
-        </p>
+        <div className="text-center mb-12">
+          <span className="section-label justify-center">Selected Work</span>
+          <h2 className="section-title">
+            My <span className="gradient-text">Portfolio</span>
+          </h2>
+          <p className="text-muted-foreground max-w-md mx-auto">
+            A selection of web and graphic design projects showcasing creativity and technical expertise.
+          </p>
+        </div>
 
         {/* Filters */}
         <div className="flex justify-center gap-2 mb-12">
@@ -105,11 +103,12 @@ const PortfolioSection = () => {
             <button
               key={f.value}
               onClick={() => setActive(f.value)}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
+              className={`px-6 py-2.5 rounded-full text-sm font-semibold font-display transition-all duration-300 ${
                 active === f.value
-                  ? "bg-primary text-primary-foreground shadow-md"
+                  ? "text-primary-foreground shadow-lg"
                   : "bg-card text-muted-foreground hover:text-foreground border border-border"
               }`}
+              style={active === f.value ? { backgroundImage: "var(--hero-gradient)" } : undefined}
             >
               {f.label}
             </button>
@@ -117,7 +116,7 @@ const PortfolioSection = () => {
         </div>
 
         {/* Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
           <AnimatePresence mode="popLayout">
             {filtered.map((project) => (
               <motion.div
@@ -134,27 +133,27 @@ const PortfolioSection = () => {
                     src={project.image}
                     alt={project.title}
                     loading="lazy"
-                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-foreground/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
-                    <Button size="sm" variant="secondary" className="gap-1.5">
+                    <Button size="sm" variant="secondary" className="gap-1.5 rounded-full">
                       <ExternalLink size={14} /> Live
                     </Button>
                     {project.category === "web" && (
-                      <Button size="sm" variant="secondary" className="gap-1.5">
+                      <Button size="sm" variant="secondary" className="gap-1.5 rounded-full">
                         <Github size={14} /> Code
                       </Button>
                     )}
                   </div>
                 </div>
-                <div className="p-5">
-                  <h3 className="font-display font-semibold mb-1">{project.title}</h3>
-                  <p className="text-muted-foreground text-sm mb-3">{project.description}</p>
+                <div className="p-6">
+                  <h3 className="font-display font-bold mb-1.5">{project.title}</h3>
+                  <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-1.5">
                     {project.tech.map((t) => (
                       <span
                         key={t}
-                        className="text-xs px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-medium"
+                        className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary font-semibold"
                       >
                         {t}
                       </span>

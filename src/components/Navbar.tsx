@@ -27,9 +27,10 @@ const Navbar = () => {
       }`}
     >
       <div className="section-container flex items-center justify-between h-16 md:h-20">
-        <a href="#" className="font-display text-xl font-bold tracking-tight">
-          <span className="gradient-text">LucyNoela</span>
-          <span className="text-foreground">.</span>
+        <a href="#" className="font-display text-xl font-extrabold tracking-tight">
+          <span className="gradient-text">Lucy</span>
+          <span className="text-foreground">Noela</span>
+          <span className="text-primary">.</span>
         </a>
 
         {/* Desktop */}
@@ -38,12 +39,12 @@ const Navbar = () => {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200"
             >
               {l.label}
             </a>
           ))}
-          <Button size="sm" className="gap-2">
+          <Button size="sm" className="gap-2 rounded-full font-semibold">
             <Download size={14} /> Download CV
           </Button>
         </div>
@@ -66,12 +67,12 @@ const Navbar = () => {
                 key={l.href}
                 href={l.href}
                 onClick={() => setMobileOpen(false)}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground py-2"
+                className="text-sm font-medium text-muted-foreground hover:text-primary py-2"
               >
                 {l.label}
               </a>
             ))}
-            <Button size="sm" className="gap-2 w-fit">
+            <Button size="sm" className="gap-2 w-fit rounded-full font-semibold">
               <Download size={14} /> Download CV
             </Button>
           </div>
