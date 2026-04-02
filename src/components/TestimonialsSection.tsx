@@ -3,17 +3,17 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Dr. Sarah Mitchell",
+    name: "Dr. Wanjiku Muthoni",
     role: "Senior Lecturer, Digital Media",
     text: "LucyNoela consistently delivers work that exceeds expectations. Her ability to combine aesthetic sensibility with technical proficiency is remarkable.",
   },
   {
-    name: "James Okonkwo",
+    name: "Brian Kipchoge",
     role: "CEO, BrandCraft Studio",
     text: "Working with LucyNoela transformed our brand identity. She understood our vision perfectly and executed it with incredible attention to detail.",
   },
   {
-    name: "Amira Hassan",
+    name: "Achieng Otieno",
     role: "Marketing Manager",
     text: "The website LucyNoela built for us increased our online engagement by 40%. Her design intuition is truly exceptional.",
   },
