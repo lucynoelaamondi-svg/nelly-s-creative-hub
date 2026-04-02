@@ -52,7 +52,7 @@ const HeroSection = () => (
           <div className="absolute -inset-4 bg-primary/10 rounded-full blur-3xl" />
           <img
             src={heroImg}
-            alt="Nelly - Graphic & Web Designer"
+            alt="LucyNoela Amondi - Graphic & Web Designer"
             width={800}
             height={900}
             className="relative w-72 sm:w-80 lg:w-96 h-auto object-contain"
