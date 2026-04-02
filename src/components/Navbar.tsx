@@ -28,7 +28,7 @@ const Navbar = () => {
     >
       <div className="section-container flex items-center justify-between h-16 md:h-20">
         <a href="#" className="font-display text-xl font-bold tracking-tight">
-          <span className="gradient-text">Nelly</span>
+          <span className="gradient-text">LucyNoela</span>
           <span className="text-foreground">.</span>
         </a>
 

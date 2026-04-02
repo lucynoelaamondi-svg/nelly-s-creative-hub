@@ -19,7 +19,7 @@ const HeroSection = () => (
         </span>
         <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6">
           Hi, I'm{" "}
-          <span className="gradient-text">Nelly</span>
+          <span className="gradient-text">LucyNoela</span>
           <br />
           I craft digital
           <br />
@@ -52,7 +52,7 @@ const HeroSection = () => (
           <div className="absolute -inset-4 bg-primary/10 rounded-full blur-3xl" />
           <img
             src={heroImg}
-            alt="Nelly - Graphic & Web Designer"
+            alt="LucyNoela Amondi - Graphic & Web Designer"
             width={800}
             height={900}
             className="relative w-72 sm:w-80 lg:w-96 h-auto object-contain"

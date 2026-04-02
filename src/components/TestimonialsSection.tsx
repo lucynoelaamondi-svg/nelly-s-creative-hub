@@ -5,17 +5,17 @@ const testimonials = [
   {
     name: "Dr. Sarah Mitchell",
     role: "Senior Lecturer, Digital Media",
-    text: "Nelly consistently delivers work that exceeds expectations. Her ability to combine aesthetic sensibility with technical proficiency is remarkable.",
+    text: "LucyNoela consistently delivers work that exceeds expectations. Her ability to combine aesthetic sensibility with technical proficiency is remarkable.",
   },
   {
     name: "James Okonkwo",
     role: "CEO, BrandCraft Studio",
-    text: "Working with Nelly transformed our brand identity. She understood our vision perfectly and executed it with incredible attention to detail.",
+    text: "Working with LucyNoela transformed our brand identity. She understood our vision perfectly and executed it with incredible attention to detail.",
   },
   {
     name: "Amira Hassan",
     role: "Marketing Manager",
-    text: "The website Nelly built for us increased our online engagement by 40%. Her design intuition is truly exceptional.",
+    text: "The website LucyNoela built for us increased our online engagement by 40%. Her design intuition is truly exceptional.",
   },
 ];
 
