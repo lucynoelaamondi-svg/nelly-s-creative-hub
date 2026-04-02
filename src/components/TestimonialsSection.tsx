@@ -10,7 +10,7 @@ const testimonials = [
   {
     name: "James Okonkwo",
     role: "CEO, BrandCraft Studio",
-    text: "Working with Nelly transformed our brand identity. She understood our vision perfectly and executed it with incredible attention to detail.",
+    text: "Working with LucyNoela transformed our brand identity. She understood our vision perfectly and executed it with incredible attention to detail.",
   },
   {
     name: "Amira Hassan",
