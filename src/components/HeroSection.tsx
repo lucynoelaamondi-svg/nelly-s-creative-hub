@@ -53,9 +53,9 @@ const HeroSection = () => (
           <img
             src={heroImg}
             alt="LucyNoela Amondi - Graphic & Web Designer"
-            width={800}
-            height={900}
-            className="relative w-72 sm:w-80 lg:w-96 h-auto object-contain"
+            width={400}
+            height={500}
+            className="relative w-72 sm:w-80 lg:w-96 h-auto object-cover rounded-2xl shadow-xl"
           />
         </div>
       </motion.div>
