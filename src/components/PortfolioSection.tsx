@@ -40,44 +40,6 @@ const projects: Project[] = [
     tech: ["PHP", "MySQL", "CSS"],
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
   },
-  {
-    id: 4,
-    title: "Coffee Brand Identity",
-    category: "graphic",
-    description: "Complete brand package including logo, packaging, and social media.",
-    tech: ["Photoshop", "Illustrator"],
-    image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=600&h=400&fit=crop",
-  },
-  {
-    id: 5,
-    title: "Music Festival Poster",
-    category: "graphic",
-    description: "Bold typographic poster series for an annual music festival.",
-    tech: ["Illustrator", "Photoshop"],
-    image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&h=400&fit=crop",
-  },
-  {
-    id: 6,
-    title: "Social Media Campaign",
-    category: "graphic",
-    description: "Cohesive visual campaign for a lifestyle brand launch.",
-    tech: ["Photoshop", "Canva"],
-    image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&h=400&fit=crop",
-  },
-  {
-    id: 7,
-    title: "Nelly Furnitures Advert",
-    category: "graphic",
-    description: "Eye-catching promotional advert for a furniture store featuring new arrivals.",
-    tech: ["Photoshop", "Illustrator"],
-    image: portfolioAdvert,
-  },
-];
-
-const filters: { label: string; value: Category }[] = [
-  { label: "All Projects", value: "all" },
-  { label: "Web Design", value: "web" },
-  { label: "Graphic Design", value: "graphic" },
 ];
 
 const PortfolioSection = () => {
