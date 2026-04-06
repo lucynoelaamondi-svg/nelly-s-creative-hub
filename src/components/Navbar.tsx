@@ -44,8 +44,10 @@ const Navbar = () => {
               {l.label}
             </a>
           ))}
-          <Button size="sm" className="gap-2 rounded-full font-semibold">
-            <Download size={14} /> Download CV
+          <Button size="sm" className="gap-2 rounded-full font-semibold" asChild>
+            <a href="/NOELA-CV.pdf" download="LucyNoela-CV.pdf">
+              <Download size={14} /> Download CV
+            </a>
           </Button>
         </div>
 
@@ -72,8 +74,10 @@ const Navbar = () => {
                 {l.label}
               </a>
             ))}
-            <Button size="sm" className="gap-2 w-fit rounded-full font-semibold">
-              <Download size={14} /> Download CV
+            <Button size="sm" className="gap-2 w-fit rounded-full font-semibold" asChild>
+              <a href="/NOELA-CV.pdf" download="LucyNoela-CV.pdf">
+                <Download size={14} /> Download CV
+              </a>
             </Button>
           </div>
         </div>
