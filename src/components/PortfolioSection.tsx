@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, ExternalLink } from "lucide-react";
+import { ChevronDown, ExternalLink, ZoomIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
 interface BehanceProject {
   id: string;
@@ -89,6 +90,7 @@ const behanceProjects: BehanceProject[] = [
 
 const PortfolioSection = () => {
   const [open, setOpen] = useState(false);
+  const [activeProject, setActiveProject] = useState<BehanceProject | null>(null);
 
   return (
     <section id="portfolio" className="section-padding bg-secondary/30">
@@ -141,15 +143,15 @@ const PortfolioSection = () => {
               >
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 pt-6">
                   {behanceProjects.map((project, idx) => (
-                    <motion.a
+                    <motion.button
                       key={project.id}
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      type="button"
+                      onClick={() => setActiveProject(project)}
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.25, delay: idx * 0.04 }}
-                      className="card-elevated overflow-hidden group block"
+                      className="card-elevated overflow-hidden group block text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                      aria-label={`Preview ${project.title}`}
                     >
                       <div className="relative overflow-hidden aspect-[4/3] bg-muted">
                         <img
@@ -160,7 +162,7 @@ const PortfolioSection = () => {
                         />
                         <div className="absolute inset-0 bg-foreground/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                           <span className="inline-flex items-center gap-2 text-background font-semibold text-sm">
-                            <ExternalLink size={16} /> View on Behance
+                            <ZoomIn size={16} /> Click to preview
                           </span>
                         </div>
                       </div>
@@ -168,7 +170,7 @@ const PortfolioSection = () => {
                         <h3 className="font-display font-bold text-base">{project.title}</h3>
                         <p className="text-muted-foreground text-xs mt-1">Graphic Design</p>
                       </div>
-                    </motion.a>
+                    </motion.button>
                   ))}
                 </div>
               </motion.div>
@@ -185,6 +187,40 @@ const PortfolioSection = () => {
           </Button>
         </div>
       </div>
+
+      {/* Lightbox preview */}
+      <Dialog open={!!activeProject} onOpenChange={(o) => !o && setActiveProject(null)}>
+        <DialogContent className="max-w-5xl p-0 overflow-hidden bg-background border-border">
+          {activeProject && (
+            <>
+              <DialogHeader className="px-6 pt-6 pb-3">
+                <DialogTitle className="font-display">{activeProject.title}</DialogTitle>
+                <DialogDescription>Graphic Design • Click below to view full project on Behance</DialogDescription>
+              </DialogHeader>
+              <div className="bg-muted/40 max-h-[70vh] overflow-auto flex items-center justify-center">
+                <img
+                  src={activeProject.image.replace("/projects/404/", "/projects/max_3840/").replace("/projects/404_webp/", "/projects/max_3840_webp/")}
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = activeProject.image;
+                  }}
+                  alt={activeProject.title}
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+              <div className="flex flex-col sm:flex-row justify-end gap-3 px-6 py-4 border-t border-border">
+                <Button variant="outline" onClick={() => setActiveProject(null)} className="rounded-full">
+                  Close
+                </Button>
+                <Button asChild className="gap-2 rounded-full">
+                  <a href={activeProject.url} target="_blank" rel="noopener noreferrer">
+                    <ExternalLink size={16} /> View on Behance
+                  </a>
+                </Button>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
