@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ExternalLink, ZoomIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import portfolioUaeJob from "@/assets/portfolio-uae-job.jpeg";
 
 interface BehanceProject {
   id: string;
@@ -14,6 +15,12 @@ interface BehanceProject {
 const behanceUrl = "https://www.behance.net/nellynoela";
 
 const behanceProjects: BehanceProject[] = [
+  {
+    id: "uae-job-poster",
+    title: "UAE Job Opportunity Poster",
+    image: portfolioUaeJob,
+    url: behanceUrl,
+  },
   {
     id: "248312437",
     title: "Brand Project",
