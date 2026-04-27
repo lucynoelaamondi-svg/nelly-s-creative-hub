@@ -187,6 +187,40 @@ const PortfolioSection = () => {
           </Button>
         </div>
       </div>
+
+      {/* Lightbox preview */}
+      <Dialog open={!!activeProject} onOpenChange={(o) => !o && setActiveProject(null)}>
+        <DialogContent className="max-w-5xl p-0 overflow-hidden bg-background border-border">
+          {activeProject && (
+            <>
+              <DialogHeader className="px-6 pt-6 pb-3">
+                <DialogTitle className="font-display">{activeProject.title}</DialogTitle>
+                <DialogDescription>Graphic Design • Click below to view full project on Behance</DialogDescription>
+              </DialogHeader>
+              <div className="bg-muted/40 max-h-[70vh] overflow-auto flex items-center justify-center">
+                <img
+                  src={activeProject.image.replace("/projects/404/", "/projects/max_3840/").replace("/projects/404_webp/", "/projects/max_3840_webp/")}
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = activeProject.image;
+                  }}
+                  alt={activeProject.title}
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+              <div className="flex flex-col sm:flex-row justify-end gap-3 px-6 py-4 border-t border-border">
+                <Button variant="outline" onClick={() => setActiveProject(null)} className="rounded-full">
+                  Close
+                </Button>
+                <Button asChild className="gap-2 rounded-full">
+                  <a href={activeProject.url} target="_blank" rel="noopener noreferrer">
+                    <ExternalLink size={16} /> View on Behance
+                  </a>
+                </Button>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
