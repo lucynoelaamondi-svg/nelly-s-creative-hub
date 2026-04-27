@@ -7,6 +7,8 @@ import portfolioUaeJob from "@/assets/portfolio-uae-job.jpeg";
 import portfolioIphone14Pro from "@/assets/portfolio-iphone-14-pro.jpeg";
 import portfolioIphone15 from "@/assets/portfolio-iphone-15.jpeg";
 import portfolioIphone11Pro from "@/assets/portfolio-iphone-11-pro.jpeg";
+import portfolioKmsNutrition from "@/assets/portfolio-kms-nutrition.jpeg";
+import portfolioKmsAmbulance from "@/assets/portfolio-kms-ambulance.jpeg";
 
 interface BehanceProject {
   id: string;
@@ -18,6 +20,18 @@ interface BehanceProject {
 const behanceUrl = "https://www.behance.net/nellynoela";
 
 const behanceProjects: BehanceProject[] = [
+  {
+    id: "kms-nutrition-poster",
+    title: "Kitengela Medical — Healthy Eating Campaign",
+    image: portfolioKmsNutrition,
+    url: behanceUrl,
+  },
+  {
+    id: "kms-ambulance-poster",
+    title: "Kitengela Medical — 24/7 Emergency Response",
+    image: portfolioKmsAmbulance,
+    url: behanceUrl,
+  },
   {
     id: "uae-job-poster",
     title: "UAE Job Opportunity Poster",
