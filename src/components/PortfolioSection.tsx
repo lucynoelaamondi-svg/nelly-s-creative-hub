@@ -9,6 +9,9 @@ import portfolioIphone15 from "@/assets/portfolio-iphone-15.jpeg";
 import portfolioIphone11Pro from "@/assets/portfolio-iphone-11-pro.jpeg";
 import portfolioKmsNutrition from "@/assets/portfolio-kms-nutrition.jpeg";
 import portfolioKmsAmbulance from "@/assets/portfolio-kms-ambulance.jpeg";
+import portfolioKmsWhyChoose from "@/assets/portfolio-kms-why-choose.jpeg";
+import portfolioKmsBreastfeeding from "@/assets/portfolio-kms-breastfeeding.jpeg";
+import portfolioBetopMonday from "@/assets/portfolio-betop-monday.jpeg";
 
 interface BehanceProject {
   id: string;
@@ -20,6 +23,24 @@ interface BehanceProject {
 const behanceUrl = "https://www.behance.net/nellynoela";
 
 const behanceProjects: BehanceProject[] = [
+  {
+    id: "kms-why-choose-poster",
+    title: "Kitengela Medical — Why Choose Us",
+    image: portfolioKmsWhyChoose,
+    url: behanceUrl,
+  },
+  {
+    id: "kms-breastfeeding-poster",
+    title: "Kitengela Medical — World Breastfeeding Week 2025",
+    image: portfolioKmsBreastfeeding,
+    url: behanceUrl,
+  },
+  {
+    id: "betop-monday-poster",
+    title: "Betop Brands Concepts — It's a Monday",
+    image: portfolioBetopMonday,
+    url: behanceUrl,
+  },
   {
     id: "kms-nutrition-poster",
     title: "Kitengela Medical — Healthy Eating Campaign",
