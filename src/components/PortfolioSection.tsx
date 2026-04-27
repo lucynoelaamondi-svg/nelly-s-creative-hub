@@ -90,6 +90,7 @@ const behanceProjects: BehanceProject[] = [
 
 const PortfolioSection = () => {
   const [open, setOpen] = useState(false);
+  const [activeProject, setActiveProject] = useState<BehanceProject | null>(null);
 
   return (
     <section id="portfolio" className="section-padding bg-secondary/30">
