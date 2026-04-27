@@ -4,6 +4,9 @@ import { ChevronDown, ExternalLink, ZoomIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import portfolioUaeJob from "@/assets/portfolio-uae-job.jpeg";
+import portfolioIphone14Pro from "@/assets/portfolio-iphone-14-pro.jpeg";
+import portfolioIphone15 from "@/assets/portfolio-iphone-15.jpeg";
+import portfolioIphone11Pro from "@/assets/portfolio-iphone-11-pro.jpeg";
 
 interface BehanceProject {
   id: string;
@@ -19,6 +22,24 @@ const behanceProjects: BehanceProject[] = [
     id: "uae-job-poster",
     title: "UAE Job Opportunity Poster",
     image: portfolioUaeJob,
+    url: behanceUrl,
+  },
+  {
+    id: "iphone-14-pro-poster",
+    title: "iPhone 14 Pro Product Poster",
+    image: portfolioIphone14Pro,
+    url: behanceUrl,
+  },
+  {
+    id: "iphone-15-poster",
+    title: "iPhone 15 Product Poster",
+    image: portfolioIphone15,
+    url: behanceUrl,
+  },
+  {
+    id: "iphone-11-pro-poster",
+    title: "iPhone 11 Pro Product Poster",
+    image: portfolioIphone11Pro,
     url: behanceUrl,
   },
   {
