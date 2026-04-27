@@ -12,6 +12,9 @@ import portfolioKmsAmbulance from "@/assets/portfolio-kms-ambulance.jpeg";
 import portfolioKmsWhyChoose from "@/assets/portfolio-kms-why-choose.jpeg";
 import portfolioKmsBreastfeeding from "@/assets/portfolio-kms-breastfeeding.jpeg";
 import portfolioBetopMonday from "@/assets/portfolio-betop-monday.jpeg";
+import portfolioKmsFamilyHealth from "@/assets/portfolio-kms-family-health.jpeg";
+import portfolioKmsCervical from "@/assets/portfolio-kms-cervical.jpeg";
+import portfolioKeyResourceHiring from "@/assets/portfolio-key-resource-hiring.jpeg";
 
 interface BehanceProject {
   id: string;
@@ -23,6 +26,24 @@ interface BehanceProject {
 const behanceUrl = "https://www.behance.net/nellynoela";
 
 const behanceProjects: BehanceProject[] = [
+  {
+    id: "kms-family-health-poster",
+    title: "Kitengela Medical — Your Family's Health, Our Priority",
+    image: portfolioKmsFamilyHealth,
+    url: behanceUrl,
+  },
+  {
+    id: "kms-cervical-poster",
+    title: "Kitengela Medical — Cervical Cancer Screening",
+    image: portfolioKmsCervical,
+    url: behanceUrl,
+  },
+  {
+    id: "key-resource-hiring-poster",
+    title: "Key Resource Services — Gulf Hiring Campaign",
+    image: portfolioKeyResourceHiring,
+    url: behanceUrl,
+  },
   {
     id: "kms-why-choose-poster",
     title: "Kitengela Medical — Why Choose Us",
