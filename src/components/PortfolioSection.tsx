@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface BehanceProject {
@@ -87,51 +88,92 @@ const behanceProjects: BehanceProject[] = [
 ];
 
 const PortfolioSection = () => {
+  const [open, setOpen] = useState(false);
+
   return (
     <section id="portfolio" className="section-padding bg-secondary/30">
       <div className="section-container">
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <span className="section-label justify-center">Selected Work</span>
           <h2 className="section-title">
             My <span className="gradient-text">Portfolio</span>
           </h2>
           <p className="text-muted-foreground max-w-md mx-auto">
-            A glimpse of my graphic design work pulled from Behance. Click any piece to view it in full.
+            Browse my graphic design work pulled from Behance. Click any piece to view it in full.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {behanceProjects.map((project, idx) => (
-            <motion.a
-              key={project.id}
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.4, delay: idx * 0.05 }}
-              className="card-elevated overflow-hidden group block"
-            >
-              <div className="relative overflow-hidden aspect-[4/3] bg-muted">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-foreground/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="inline-flex items-center gap-2 text-background font-semibold">
-                    <ExternalLink size={18} /> View on Behance
-                  </span>
+        <div className="max-w-4xl mx-auto">
+          {/* Dropdown trigger */}
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-controls="behance-projects-panel"
+            className="w-full flex items-center justify-between gap-4 px-6 py-4 rounded-2xl bg-card border border-border shadow-md hover:shadow-lg transition-all"
+          >
+            <span className="flex items-center gap-3">
+              <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988H0V5.021h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zM3 11h3.584c2.508 0 2.906-3-.312-3H3v3zm3.391 3H3v3.016h3.341c3.055 0 2.868-3.016.05-3.016z"/></svg>
+              </span>
+              <span className="text-left">
+                <span className="block font-display font-bold">Graphic Design Projects</span>
+                <span className="block text-xs text-muted-foreground">{behanceProjects.length} pieces from Behance</span>
+              </span>
+            </span>
+            <ChevronDown
+              size={22}
+              className={`text-muted-foreground transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+            />
+          </button>
+
+          {/* Dropdown panel */}
+          <AnimatePresence initial={false}>
+            {open && (
+              <motion.div
+                id="behance-projects-panel"
+                key="panel"
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="overflow-hidden"
+              >
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 pt-6">
+                  {behanceProjects.map((project, idx) => (
+                    <motion.a
+                      key={project.id}
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.25, delay: idx * 0.04 }}
+                      className="card-elevated overflow-hidden group block"
+                    >
+                      <div className="relative overflow-hidden aspect-[4/3] bg-muted">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          loading="lazy"
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-foreground/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                          <span className="inline-flex items-center gap-2 text-background font-semibold text-sm">
+                            <ExternalLink size={16} /> View on Behance
+                          </span>
+                        </div>
+                      </div>
+                      <div className="p-4">
+                        <h3 className="font-display font-bold text-base">{project.title}</h3>
+                        <p className="text-muted-foreground text-xs mt-1">Graphic Design</p>
+                      </div>
+                    </motion.a>
+                  ))}
                 </div>
-              </div>
-              <div className="p-4">
-                <h3 className="font-display font-bold text-base">{project.title}</h3>
-                <p className="text-muted-foreground text-xs mt-1">Graphic Design</p>
-              </div>
-            </motion.a>
-          ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
 
         <div className="flex justify-center mt-12">
