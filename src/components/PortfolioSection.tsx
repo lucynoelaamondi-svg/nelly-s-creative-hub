@@ -22,6 +22,9 @@ import portfolioKeyResourceWaiters from "@/assets/portfolio-key-resource-waiters
 import portfolioGraysonWorkshop from "@/assets/portfolio-grayson-workshop.jpeg";
 import portfolioSejojoKorompoi from "@/assets/portfolio-sejojo-korompoi.jpeg";
 import portfolioLogihostWebsite from "@/assets/portfolio-logihost-website.jpeg";
+import portfolioSejojoGypsum from "@/assets/portfolio-sejojo-gypsum.jpeg";
+import portfolioGraysonJobEvaluation from "@/assets/portfolio-grayson-job-evaluation.jpeg";
+import portfolioGraysonKeyAccount from "@/assets/portfolio-grayson-key-account.jpeg";
 
 interface BehanceProject {
   id: string;
@@ -33,6 +36,24 @@ interface BehanceProject {
 const behanceUrl = "https://www.behance.net/nellynoela";
 
 const behanceProjects: BehanceProject[] = [
+  {
+    id: "sejojo-gypsum-flash-deal",
+    title: "Sejojo Hardware — Flash Deal: Premium Gypsum Boards",
+    image: portfolioSejojoGypsum,
+    url: behanceUrl,
+  },
+  {
+    id: "grayson-job-evaluation-workshop",
+    title: "Grayson Consulting — Job Evaluation & Workload Analysis Workshop",
+    image: portfolioGraysonJobEvaluation,
+    url: behanceUrl,
+  },
+  {
+    id: "grayson-key-account-workshop",
+    title: "Grayson Consulting — Key Account Management Workshop",
+    image: portfolioGraysonKeyAccount,
+    url: behanceUrl,
+  },
   {
     id: "betop-brands-concepts",
     title: "Betop Brands Concepts — Where Identity Meets Impact",
