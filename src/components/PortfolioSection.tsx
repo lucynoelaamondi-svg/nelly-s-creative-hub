@@ -15,6 +15,13 @@ import portfolioBetopMonday from "@/assets/portfolio-betop-monday.jpeg";
 import portfolioKmsFamilyHealth from "@/assets/portfolio-kms-family-health.jpeg";
 import portfolioKmsCervical from "@/assets/portfolio-kms-cervical.jpeg";
 import portfolioKeyResourceHiring from "@/assets/portfolio-key-resource-hiring.jpeg";
+import portfolioBetopBrands from "@/assets/portfolio-betop-brands.jpeg";
+import portfolioSejojoPaints from "@/assets/portfolio-sejojo-paints.jpeg";
+import portfolioBaristaCourse from "@/assets/portfolio-barista-course.jpeg";
+import portfolioKeyResourceWaiters from "@/assets/portfolio-key-resource-waiters.jpeg";
+import portfolioGraysonWorkshop from "@/assets/portfolio-grayson-workshop.jpeg";
+import portfolioSejojoKorompoi from "@/assets/portfolio-sejojo-korompoi.jpeg";
+import portfolioLogihostWebsite from "@/assets/portfolio-logihost-website.jpeg";
 
 interface BehanceProject {
   id: string;
@@ -26,6 +33,48 @@ interface BehanceProject {
 const behanceUrl = "https://www.behance.net/nellynoela";
 
 const behanceProjects: BehanceProject[] = [
+  {
+    id: "betop-brands-concepts",
+    title: "Betop Brands Concepts — Where Identity Meets Impact",
+    image: portfolioBetopBrands,
+    url: behanceUrl,
+  },
+  {
+    id: "sejojo-paints-poster",
+    title: "Sejojo Hardware — Your One-Stop Paint Store",
+    image: portfolioSejojoPaints,
+    url: behanceUrl,
+  },
+  {
+    id: "barista-ace-course",
+    title: "Barista Ace — Professional Barista Course",
+    image: portfolioBaristaCourse,
+    url: behanceUrl,
+  },
+  {
+    id: "key-resource-waiters",
+    title: "Key Resource Services — Waiters Recruitment",
+    image: portfolioKeyResourceWaiters,
+    url: behanceUrl,
+  },
+  {
+    id: "grayson-workshop",
+    title: "Grayson Consulting — International Trade & Finance Workshop",
+    image: portfolioGraysonWorkshop,
+    url: behanceUrl,
+  },
+  {
+    id: "sejojo-korompoi-branch",
+    title: "Sejojo Hardware — New Korompoi Branch Launch",
+    image: portfolioSejojoKorompoi,
+    url: behanceUrl,
+  },
+  {
+    id: "logihost-website-poster",
+    title: "Logihost Technologies — Need a Professional Website",
+    image: portfolioLogihostWebsite,
+    url: behanceUrl,
+  },
   {
     id: "kms-family-health-poster",
     title: "Kitengela Medical — Your Family's Health, Our Priority",
