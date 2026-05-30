@@ -45,7 +45,7 @@ const Navbar = () => {
             </a>
           ))}
           <Button size="sm" className="gap-2 rounded-full font-semibold" asChild>
-            <a href="/NOELA-CV.pdf" download="LucyNoela-CV.pdf">
+            <a href="/Noela_CV_Graphics_Designer.pdf" download="Noela_CV_Graphics_Designer.pdf">
               <Download size={14} /> Download CV
             </a>
           </Button>
@@ -75,7 +75,7 @@ const Navbar = () => {
               </a>
             ))}
             <Button size="sm" className="gap-2 w-fit rounded-full font-semibold" asChild>
-              <a href="/NOELA-CV.pdf" download="LucyNoela-CV.pdf">
+              <a href="/Noela_CV_Graphics_Designer.pdf" download="Noela_CV_Graphics_Designer.pdf">
                 <Download size={14} /> Download CV
               </a>
             </Button>
