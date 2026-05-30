@@ -15,7 +15,7 @@ const testimonials = [
   {
     name: "Achieng Otieno",
     role: "Marketing Manager",
-    text: "The website LucyNoela built for us increased our online engagement by 40%. Her design intuition is truly exceptional.",
+    text: "The designs LucyNoela created for us increased our online engagement by 40%. Her graphics work and visual intuition are truly exceptional.",
   },
 ];
 
