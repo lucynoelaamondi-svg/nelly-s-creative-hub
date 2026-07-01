@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, ExternalLink, ZoomIn } from "lucide-react";
+import { ChevronDown, ZoomIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import portfolioUaeJob from "@/assets/portfolio-uae-job.jpeg";
@@ -26,225 +26,40 @@ import portfolioSejojoGypsum from "@/assets/portfolio-sejojo-gypsum.jpeg";
 import portfolioGraysonJobEvaluation from "@/assets/portfolio-grayson-job-evaluation.jpeg";
 import portfolioGraysonKeyAccount from "@/assets/portfolio-grayson-key-account.jpeg";
 
-interface BehanceProject {
+interface GalleryProject {
   id: string;
   title: string;
   image: string;
-  url: string;
 }
 
-const behanceUrl = "https://www.behance.net/nellynoela";
-
-const behanceProjects: BehanceProject[] = [
-  {
-    id: "sejojo-gypsum-flash-deal",
-    title: "Sejojo Hardware — Flash Deal: Premium Gypsum Boards",
-    image: portfolioSejojoGypsum,
-    url: behanceUrl,
-  },
-  {
-    id: "grayson-job-evaluation-workshop",
-    title: "Grayson Consulting — Job Evaluation & Workload Analysis Workshop",
-    image: portfolioGraysonJobEvaluation,
-    url: behanceUrl,
-  },
-  {
-    id: "grayson-key-account-workshop",
-    title: "Grayson Consulting — Key Account Management Workshop",
-    image: portfolioGraysonKeyAccount,
-    url: behanceUrl,
-  },
-  {
-    id: "betop-brands-concepts",
-    title: "Betop Brands Concepts — Where Identity Meets Impact",
-    image: portfolioBetopBrands,
-    url: behanceUrl,
-  },
-  {
-    id: "sejojo-paints-poster",
-    title: "Sejojo Hardware — Your One-Stop Paint Store",
-    image: portfolioSejojoPaints,
-    url: behanceUrl,
-  },
-  {
-    id: "barista-ace-course",
-    title: "Barista Ace — Professional Barista Course",
-    image: portfolioBaristaCourse,
-    url: behanceUrl,
-  },
-  {
-    id: "key-resource-waiters",
-    title: "Key Resource Services — Waiters Recruitment",
-    image: portfolioKeyResourceWaiters,
-    url: behanceUrl,
-  },
-  {
-    id: "grayson-workshop",
-    title: "Grayson Consulting — International Trade & Finance Workshop",
-    image: portfolioGraysonWorkshop,
-    url: behanceUrl,
-  },
-  {
-    id: "sejojo-korompoi-branch",
-    title: "Sejojo Hardware — New Korompoi Branch Launch",
-    image: portfolioSejojoKorompoi,
-    url: behanceUrl,
-  },
-  {
-    id: "logihost-website-poster",
-    title: "Logihost Technologies — Need a Professional Website",
-    image: portfolioLogihostWebsite,
-    url: behanceUrl,
-  },
-  {
-    id: "kms-family-health-poster",
-    title: "Kitengela Medical — Your Family's Health, Our Priority",
-    image: portfolioKmsFamilyHealth,
-    url: behanceUrl,
-  },
-  {
-    id: "kms-cervical-poster",
-    title: "Kitengela Medical — Cervical Cancer Screening",
-    image: portfolioKmsCervical,
-    url: behanceUrl,
-  },
-  {
-    id: "key-resource-hiring-poster",
-    title: "Key Resource Services — Gulf Hiring Campaign",
-    image: portfolioKeyResourceHiring,
-    url: behanceUrl,
-  },
-  {
-    id: "kms-why-choose-poster",
-    title: "Kitengela Medical — Why Choose Us",
-    image: portfolioKmsWhyChoose,
-    url: behanceUrl,
-  },
-  {
-    id: "kms-breastfeeding-poster",
-    title: "Kitengela Medical — World Breastfeeding Week 2025",
-    image: portfolioKmsBreastfeeding,
-    url: behanceUrl,
-  },
-  {
-    id: "betop-monday-poster",
-    title: "Betop Brands Concepts — It's a Monday",
-    image: portfolioBetopMonday,
-    url: behanceUrl,
-  },
-  {
-    id: "kms-nutrition-poster",
-    title: "Kitengela Medical — Healthy Eating Campaign",
-    image: portfolioKmsNutrition,
-    url: behanceUrl,
-  },
-  {
-    id: "kms-ambulance-poster",
-    title: "Kitengela Medical — 24/7 Emergency Response",
-    image: portfolioKmsAmbulance,
-    url: behanceUrl,
-  },
-  {
-    id: "uae-job-poster",
-    title: "UAE Job Opportunity Poster",
-    image: portfolioUaeJob,
-    url: behanceUrl,
-  },
-  {
-    id: "iphone-14-pro-poster",
-    title: "iPhone 14 Pro Product Poster",
-    image: portfolioIphone14Pro,
-    url: behanceUrl,
-  },
-  {
-    id: "iphone-15-poster",
-    title: "iPhone 15 Product Poster",
-    image: portfolioIphone15,
-    url: behanceUrl,
-  },
-  {
-    id: "iphone-11-pro-poster",
-    title: "iPhone 11 Pro Product Poster",
-    image: portfolioIphone11Pro,
-    url: behanceUrl,
-  },
-  {
-    id: "248312437",
-    title: "Brand Project",
-    image: "https://mir-s3-cdn-cf.behance.net/projects/404/8db670248312437.Y3JvcCwxMDgwLDg0NCwwLDExNw.jpeg",
-    url: "https://www.behance.net/gallery/248312437/project",
-  },
-  {
-    id: "248312169",
-    title: "Design Project",
-    image: "https://mir-s3-cdn-cf.behance.net/projects/404/df295f248312169.Y3JvcCwxMDgwLDg0NCwwLDExNw.jpeg",
-    url: "https://www.behance.net/gallery/248312169/project",
-  },
-  {
-    id: "247186913",
-    title: "Advert",
-    image: "https://mir-s3-cdn-cf.behance.net/projects/404/1e4761247186913.Y3JvcCw3MjAwLDU2MzEsMCwyNTg0.png",
-    url: "https://www.behance.net/gallery/247186913/advert",
-  },
-  {
-    id: "247185839",
-    title: "Campaign",
-    image: "https://mir-s3-cdn-cf.behance.net/projects/404/7c56d5247185839.Y3JvcCwxMjAwLDkzOCwwLDI3OQ.png",
-    url: "https://www.behance.net/gallery/247185839/campaign",
-  },
-  {
-    id: "247185683",
-    title: "Dummy Site",
-    image: "https://mir-s3-cdn-cf.behance.net/projects/404/b8663b247185683.Y3JvcCwxNzg5LDE0MDAsMTU1LDA.png",
-    url: "https://www.behance.net/gallery/247185683/dummy-site",
-  },
-  {
-    id: "247105561",
-    title: "Pin Badge",
-    image: "https://mir-s3-cdn-cf.behance.net/projects/404/d4b689247105561.Y3JvcCwxMjAwLDkzOCwwLDI3OQ.png",
-    url: "https://www.behance.net/gallery/247105561/pin-budge",
-  },
-  {
-    id: "247104831",
-    title: "Poster",
-    image: "https://mir-s3-cdn-cf.behance.net/projects/404/cd3951247104831.Y3JvcCwyNDgwLDE5MzksMCw3ODU.jpg",
-    url: "https://www.behance.net/gallery/247104831/poster",
-  },
-  {
-    id: "247104659",
-    title: "Banner",
-    image: "https://mir-s3-cdn-cf.behance.net/projects/404/c357c2247104659.Y3JvcCw5OTksNzgyLDAsMTA4.png",
-    url: "https://www.behance.net/gallery/247104659/banner",
-  },
-  {
-    id: "247104531",
-    title: "Photoshop Work",
-    image: "https://mir-s3-cdn-cf.behance.net/projects/404/0f96a4247104531.Y3JvcCw5OTksNzgyLDAsNDA4.png",
-    url: "https://www.behance.net/gallery/247104531/ps-work",
-  },
-  {
-    id: "247104435",
-    title: "Photoshop Work",
-    image: "https://mir-s3-cdn-cf.behance.net/projects/404/3b1733247104435.Y3JvcCw5OTksNzgyLDAsNDA4.png",
-    url: "https://www.behance.net/gallery/247104435/ps-work",
-  },
-  {
-    id: "247090399",
-    title: "Banner",
-    image: "https://mir-s3-cdn-cf.behance.net/projects/404/8a90da247090399.Y3JvcCwzNjQ4LDI4NTMsMCwxMzA5.png",
-    url: "https://www.behance.net/gallery/247090399/Banner",
-  },
-  {
-    id: "246948849",
-    title: "Campaign Flyer",
-    image: "https://mir-s3-cdn-cf.behance.net/projects/404/6629c1246948849.Y3JvcCwxMDI0LDgwMCwwLDIwMA.png",
-    url: "https://www.behance.net/gallery/246948849/campaign-flyer",
-  },
+const galleryProjects: GalleryProject[] = [
+  { id: "sejojo-gypsum-flash-deal", title: "Sejojo Hardware — Flash Deal: Premium Gypsum Boards", image: portfolioSejojoGypsum },
+  { id: "grayson-job-evaluation-workshop", title: "Grayson Consulting — Job Evaluation & Workload Analysis Workshop", image: portfolioGraysonJobEvaluation },
+  { id: "grayson-key-account-workshop", title: "Grayson Consulting — Key Account Management Workshop", image: portfolioGraysonKeyAccount },
+  { id: "betop-brands-concepts", title: "Betop Brands Concepts — Where Identity Meets Impact", image: portfolioBetopBrands },
+  { id: "sejojo-paints-poster", title: "Sejojo Hardware — Your One-Stop Paint Store", image: portfolioSejojoPaints },
+  { id: "barista-ace-course", title: "Barista Ace — Professional Barista Course", image: portfolioBaristaCourse },
+  { id: "key-resource-waiters", title: "Key Resource Services — Waiters Recruitment", image: portfolioKeyResourceWaiters },
+  { id: "grayson-workshop", title: "Grayson Consulting — International Trade & Finance Workshop", image: portfolioGraysonWorkshop },
+  { id: "sejojo-korompoi-branch", title: "Sejojo Hardware — New Korompoi Branch Launch", image: portfolioSejojoKorompoi },
+  { id: "logihost-website-poster", title: "Logihost Technologies — Need a Professional Website", image: portfolioLogihostWebsite },
+  { id: "kms-family-health-poster", title: "Kitengela Medical — Your Family's Health, Our Priority", image: portfolioKmsFamilyHealth },
+  { id: "kms-cervical-poster", title: "Kitengela Medical — Cervical Cancer Screening", image: portfolioKmsCervical },
+  { id: "key-resource-hiring-poster", title: "Key Resource Services — Gulf Hiring Campaign", image: portfolioKeyResourceHiring },
+  { id: "kms-why-choose-poster", title: "Kitengela Medical — Why Choose Us", image: portfolioKmsWhyChoose },
+  { id: "kms-breastfeeding-poster", title: "Kitengela Medical — World Breastfeeding Week 2025", image: portfolioKmsBreastfeeding },
+  { id: "betop-monday-poster", title: "Betop Brands Concepts — It's a Monday", image: portfolioBetopMonday },
+  { id: "kms-nutrition-poster", title: "Kitengela Medical — Healthy Eating Campaign", image: portfolioKmsNutrition },
+  { id: "kms-ambulance-poster", title: "Kitengela Medical — 24/7 Emergency Response", image: portfolioKmsAmbulance },
+  { id: "uae-job-poster", title: "UAE Job Opportunity Poster", image: portfolioUaeJob },
+  { id: "iphone-14-pro-poster", title: "iPhone 14 Pro Product Poster", image: portfolioIphone14Pro },
+  { id: "iphone-15-poster", title: "iPhone 15 Product Poster", image: portfolioIphone15 },
+  { id: "iphone-11-pro-poster", title: "iPhone 11 Pro Product Poster", image: portfolioIphone11Pro },
 ];
 
 const PortfolioSection = () => {
   const [open, setOpen] = useState(false);
-  const [activeProject, setActiveProject] = useState<BehanceProject | null>(null);
+  const [activeProject, setActiveProject] = useState<GalleryProject | null>(null);
 
   return (
     <section id="portfolio" className="section-padding bg-secondary/30">
@@ -255,7 +70,7 @@ const PortfolioSection = () => {
             My <span className="gradient-text">Portfolio</span>
           </h2>
           <p className="text-muted-foreground max-w-md mx-auto">
-            Browse my graphic design work pulled from Behance. Click any piece to view it in full.
+            Browse my graphic design work. Click any piece to view it in full.
           </p>
         </div>
 
@@ -265,7 +80,7 @@ const PortfolioSection = () => {
             type="button"
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
-            aria-controls="behance-projects-panel"
+            aria-controls="gallery-projects-panel"
             className="w-full flex items-center justify-between gap-4 px-6 py-4 rounded-2xl bg-card border border-border shadow-md hover:shadow-lg transition-all"
           >
             <span className="flex items-center gap-3">
@@ -274,7 +89,7 @@ const PortfolioSection = () => {
               </span>
               <span className="text-left">
                 <span className="block font-display font-bold">Graphic Design Projects</span>
-                <span className="block text-xs text-muted-foreground">{behanceProjects.length} pieces from Behance</span>
+                <span className="block text-xs text-muted-foreground">{galleryProjects.length} pieces</span>
               </span>
             </span>
             <ChevronDown
@@ -287,7 +102,7 @@ const PortfolioSection = () => {
           <AnimatePresence initial={false}>
             {open && (
               <motion.div
-                id="behance-projects-panel"
+                id="gallery-projects-panel"
                 key="panel"
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: "auto", opacity: 1 }}
@@ -296,7 +111,7 @@ const PortfolioSection = () => {
                 className="overflow-hidden"
               >
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 pt-6">
-                  {behanceProjects.map((project, idx) => (
+                  {galleryProjects.map((project, idx) => (
                     <motion.button
                       key={project.id}
                       type="button"
@@ -331,15 +146,6 @@ const PortfolioSection = () => {
             )}
           </AnimatePresence>
         </div>
-
-        <div className="flex justify-center mt-12">
-          <Button size="lg" className="gap-2 rounded-full px-8 font-semibold shadow-lg" asChild>
-            <a href={behanceUrl} target="_blank" rel="noopener noreferrer">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988H0V5.021h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zM3 11h3.584c2.508 0 2.906-3-.312-3H3v3zm3.391 3H3v3.016h3.341c3.055 0 2.868-3.016.05-3.016z"/></svg>
-              See All My Work on Behance
-            </a>
-          </Button>
-        </div>
       </div>
 
       {/* Lightbox preview */}
@@ -349,26 +155,18 @@ const PortfolioSection = () => {
             <>
               <DialogHeader className="px-6 pt-6 pb-3">
                 <DialogTitle className="font-display">{activeProject.title}</DialogTitle>
-                <DialogDescription>Graphic Design • Click below to view full project on Behance</DialogDescription>
+                <DialogDescription>Graphic Design</DialogDescription>
               </DialogHeader>
               <div className="bg-muted/40 max-h-[70vh] overflow-auto flex items-center justify-center">
                 <img
-                  src={activeProject.image.replace("/projects/404/", "/projects/max_3840/").replace("/projects/404_webp/", "/projects/max_3840_webp/")}
-                  onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src = activeProject.image;
-                  }}
+                  src={activeProject.image}
                   alt={activeProject.title}
                   className="w-full h-auto object-contain"
                 />
               </div>
-              <div className="flex flex-col sm:flex-row justify-end gap-3 px-6 py-4 border-t border-border">
+              <div className="flex justify-end px-6 py-4 border-t border-border">
                 <Button variant="outline" onClick={() => setActiveProject(null)} className="rounded-full">
                   Close
-                </Button>
-                <Button asChild className="gap-2 rounded-full">
-                  <a href={activeProject.url} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink size={16} /> View on Behance
-                  </a>
                 </Button>
               </div>
             </>
