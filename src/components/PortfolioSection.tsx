@@ -33,8 +33,6 @@ interface BehanceProject {
   url: string;
 }
 
-const behanceUrl = "https://www.behance.net/nellynoela";
-
 const behanceProjects: BehanceProject[] = [
   {
     id: "sejojo-gypsum-flash-deal",
