@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Mail, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImg from "@/assets/hero-photo.jpg";
+import heroAsset from "@/assets/hero-photo.jpg.asset.json";
 
 const HeroSection = () => (
   <section className="min-h-screen flex items-center relative overflow-hidden">
