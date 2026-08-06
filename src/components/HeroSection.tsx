@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Mail, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImg from "@/assets/hero-photo.jpg";
+import heroAsset from "@/assets/hero-photo.jpg.asset.json";
 
 const HeroSection = () => (
   <section className="min-h-screen flex items-center relative overflow-hidden">
@@ -65,11 +65,11 @@ const HeroSection = () => (
             <div className="w-full h-full rounded-3xl bg-background" />
           </div>
           <img
-            src={heroImg}
+            src={heroAsset.url}
             alt="LucyNoela Amondi - Graphic & Web Designer"
             width={420}
-            height={520}
-            className="relative w-72 sm:w-80 lg:w-[400px] h-auto object-cover rounded-3xl shadow-2xl"
+            height={525}
+            className="relative w-72 sm:w-80 lg:w-[400px] aspect-[4/5] object-cover object-top rounded-3xl shadow-2xl"
           />
           {/* Floating badge */}
           <motion.div
